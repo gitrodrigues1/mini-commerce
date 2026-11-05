@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: minicommerce
+resources:
+  - order-service.yaml
+  - inventory-service.yaml
+  - payment-service.yaml
+  - api-gateway.yaml
+images:
+  - name: minicommerce/order-service
+    newTag: "0.1.0"
+  - name: minicommerce/inventory-service
+    newTag: "0.1.0"
+  - name: minicommerce/payment-service
+    newTag: "0.1.0"
+  - name: minicommerce/api-gateway
+    newTag: "0.1.0"
